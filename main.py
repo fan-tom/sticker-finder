@@ -7,7 +7,7 @@ from stickerfinder.config import config
 
 if config["webhook"]["enabled"]:
     updater.start_webhook(
-        listen="127.0.0.1",
+        listen="0.0.0.0",
         port=config["webhook"]["port"],
         url_path=config["webhook"]["token"],
     )
@@ -15,7 +15,8 @@ if config["webhook"]["enabled"]:
     token = config["webhook"]["token"]
     print("Starting up")
     updater.bot.set_webhook(
-        url=f"{domain}{token}", certificate=open(config["webhook"]["cert_path"], "rb")
+        url=f"{domain}{token}",
+        # certificate=open(config["webhook"]["cert_path"], "rb")
     )
 else:
     updater.start_polling()

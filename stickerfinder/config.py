@@ -42,7 +42,8 @@ default_config = {
     },
 }
 
-config_path = os.path.expanduser("~/.config/stickerfinder.toml")
+# config_path = os.path.expanduser("~/.config/stickerfinder.toml")
+config_path = "stickerfinder.toml"
 
 if not os.path.exists(config_path):
     with open(config_path, "w") as file_descriptor:
@@ -57,3 +58,21 @@ else:
         for option, value in category.items():
             if option not in config[key]:
                 config[key][option] = value
+
+    # Handle heroku
+    port = int(os.environ.get('PORT', -1))
+    if port >= 0:
+        config["webhook"]["port"] = port
+
+    db_url = os.environ.get('DATABASE_URL')
+
+    if db_url is not None:
+        config["database"]["sql_url"] = db_url
+
+    webhooktoken = os.environ.get('WEBHOOK_TOKEN')
+    if webhooktoken is not None:
+        config["webhook"]["token"] = webhooktoken
+
+    bot_token = os.environ.get('BOT_TOKEN')
+    if bot_token is not None:
+        config["telegram"]["api_key"] = bot_token

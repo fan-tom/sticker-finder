@@ -1,11 +1,11 @@
 [telegram]
 api_key = "your api key"
 worker_count = 20
-admin = "your user name"
-bot_name = "stickerfinder"
+admin = "geraleks"
+bot_name = "memsticbot"
 
 [database]
-sql_uri = "postgres://localhost/stickerfinder"
+sql_uri = "postgres://postgres:password@localhost:54321/stickers"
 connection_count = 20
 overflow_count = 10
 
@@ -16,8 +16,8 @@ log_level = 20
 debug = false
 
 [webhook]
-enabled = false
-domain = "https://localhost"
+enabled = true
+domain = "https://memsticbot.herokuapp.com/"
 token = "stickerfinder"
 cert_path = "/path/to/cert.pem"
 port = 7000

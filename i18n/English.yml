@@ -43,10 +43,10 @@ text:
       If you're interested, there is more detailed info in the help section.
 
       🔎 *Sticker search:*
-      just type `@stfi_bot kermit` anywhere. You can search by pack name, tags, emoji and sometimes even text inside the sticker.
+      just type `@%{username} kermit` anywhere. You can search by pack name, tags, emoji and sometimes even text inside the sticker.
 
       🔎 *Sticker pack search:*
-      Just add "set" or "pack" to your search e.g. `@stfi_bot kermit set`.
+      Just add "set" or "pack" to your search e.g. `@%{username} kermit set`.
 
       🔎 *Animated stickers:*
       Animated stickers are always included in your search. If you want to search animated stickers exclusively, simply add the word `ani` or `animated` to your search.
@@ -119,7 +119,7 @@ text:
 
       *Sticker pack search:*
 
-      Just add `set` or `pack` to your search e.g. `@stfi_bot kermit set`.
+      Just add `set` or `pack` to your search e.g. `@%{username} kermit set`.
 
 
       *Add sticker packs:*

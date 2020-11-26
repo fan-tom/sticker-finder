@@ -9,6 +9,7 @@ from stickerfinder.telegram.keyboard import (
     get_main_keyboard,
     get_settings_keyboard,
 )
+from stickerfinder.config import config
 
 
 @message_wrapper()
@@ -20,7 +21,7 @@ def start(bot, update, session, chat, user):
         )
     else:
         update.message.chat.send_message(
-            i18n.t("text.misc.start"),
+            i18n.t("text.misc.start", username=config["telegram"]["bot_name"]),
             reply_markup=get_main_keyboard(user),
             parse_mode="Markdown",
             disable_web_page_preview=True,

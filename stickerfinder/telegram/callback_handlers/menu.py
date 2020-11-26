@@ -11,6 +11,7 @@ from stickerfinder.telegram.keyboard import (
     get_settings_keyboard,
     get_admin_settings_keyboard,
 )
+from stickerfinder.config import config
 
 
 def open_settings(session, context):
@@ -80,7 +81,7 @@ def open_donations(session, context):
 def main_menu(session, context):
     """Show the main menu."""
     context.query.message.edit_text(
-        i18n.t("text.misc.start"),
+        i18n.t("text.misc.start", username=config["telegram"]["bot_name"]),
         reply_markup=get_main_keyboard(context.user),
         parse_mode="Markdown",
         disable_web_page_preview=True,

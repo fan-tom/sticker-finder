@@ -1,6 +1,7 @@
 """Helper for compiling text."""
 from stickerfinder.i18n import i18n
 from stickerfinder.telegram.keyboard import get_help_keyboard
+from stickerfinder.config import config
 
 
 def get_settings_text(user):
@@ -59,7 +60,7 @@ def get_help_text_and_keyboard(current_category):
     ]
 
     help_texts = {}
-    help_texts["Search"] = i18n.t("text.help.search")
+    help_texts["Search"] = i18n.t("text.help.search", username=config["telegram"]["bot_name"])
     help_texts["Tagging"] = i18n.t("text.help.tagging")
     help_texts["Language"] = i18n.t("text.help.language")
     help_texts["NSFW/Furry/Ban"] = i18n.t("text.help.ban")
